@@ -14,7 +14,7 @@ from the collection
 or null if not found
 
 Starting point:
-
+```
 class main.java.OlgaArray {
  main.java.LetterSummary[] collection;
 
@@ -42,3 +42,4 @@ class main.java.OlgaArray {
  }
 
 }
+```
