@@ -1,29 +1,44 @@
-
 public class OlgaArray {
-    static LetterSummary[] colection;
+    private LetterSummary[] collection;
+
+    OlgaArray() {
+        this.collection = new LetterSummary[0];
+    }
 
     public void add(LetterSummary letterSummary) {
-        colection = new LetterSummary[]{letterSummary};
-        for (int i = 0; i < colection.length; i++) {
-            colection[i] = letterSummary;
-           // System.out.println(colection[i]);
+        // check if shelf has empty space
+
+        // if shelf is full then we need a new and bigger shelf
+        // move all existing books to the new shelf
+        // put book into shelf
+
+        int countOfEmptySpace = 0;
+
+        for (int i = 0; i < collection.length; i++) {
+            if (collection[i] == null) {
+                countOfEmptySpace++;
+            }
         }
+
+        if (  countOfEmptySpace  < 1) {              // no empty space
+            LetterSummary[] letterSummaries = new LetterSummary[ collection.length + 1];
+
+            for (int j = 0; j < collection.length ; j++) {    // go along the length collections array
+                letterSummaries[j] = collection[j];           // copy array, by collection array with index   and send in letterSummary array with same index
+            }
+
+            letterSummaries[letterSummaries.length - 1] = letterSummary;            // array with  next index = new variable
+            collection = letterSummaries;
+        }
+
+    }
+
+    public LetterSummary[] getAll() {
+        return collection ;
     }
 
     public LetterSummary get(int index) {
-        LetterSummary[] letter = new LetterSummary[index];
-        for (int i = 0; i < index; i++) {
-            letter[i] = colection[i];
-            colection = letter;
-          //  System.out.println(letter[i]);
-        }
-        return colection[index];
-    }
-
-
-    public LetterSummary[] getAll() {
-
-        return null;
+        return collection[index];
     }
 
     public void remove(int index) {
@@ -32,15 +47,9 @@ public class OlgaArray {
     }
 
     public LetterSummary findByLetter(String letter) {
+        collection = new LetterSummary[letter.length()];
 
         return null;
-    }
-
-    public static void main(String[] args) {
-        OlgaArray o = new OlgaArray();
-        LetterSummary letterSummary = new LetterSummary();
-        o.add(letterSummary);
-        o.get(3);
     }
 
 
