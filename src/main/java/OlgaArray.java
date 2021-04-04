@@ -43,24 +43,18 @@ public class OlgaArray {
 
     public void remove(int index) {
 
-
     }
 
     public LetterSummary findByLetter(String letter) {
         int index = 0;
-        for (int i = 0; i < collection.length; i++) {               // check object array
+
+        for (int i = 0; i < collection.length; i++) {                // check object array
+            index = i;                                               //  compare index with i (i = what is the count object)
             if (letter.equals(collection[i].letter)) {              // if a letter equals  a object
-                return collection[i];                               // return object
+                return collection[i];                                // return object
             }
-            index = i;                                            //  compare index with i (i = what is the count object)
         }
-        collection = new LetterSummary[letter.length()];          // new object
-
-        if (letter.equals(collection[index].letter)) {             // if a letter equals new object
-            return collection[index];                              //return object
-        }
-
-        return collection[index];
+        return null;
 
     }
 }
