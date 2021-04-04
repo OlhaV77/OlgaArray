@@ -42,6 +42,22 @@ public class OlgaArray {
     }
 
     public void remove(int index) {
+       for(int i = 0; i < collection.length; i++) {
+           if (index == i) {
+
+          LetterSummary[] letterSummary = new LetterSummary[collection.length - 1 ];
+           for(int j = 0; j < letterSummary.length; j++){
+               letterSummary[j] = collection[j];
+           }
+           for(int j = i; j < collection.length -1; j++){
+               letterSummary[j] = collection[j];
+           }
+               collection = letterSummary;
+
+
+           }
+
+           }
 
     }
 

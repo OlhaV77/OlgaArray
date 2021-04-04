@@ -122,7 +122,7 @@ public class OlgaArrayTest {
         assertThat(subject.findByLetter("b").letter).isEqualTo("b");
         assertThat(subject.findByLetter("z").letter).isEqualTo("z");
     }
-/*
+
     @Test
     public void remove_whenOneRecordExists_containsZeroRecords() {
         OlgaArray subject = new OlgaArray();
@@ -206,7 +206,7 @@ public class OlgaArrayTest {
     }
 
 
- */
+
     private LetterSummary buildLetterSummary(String letter, int count) {
         LetterSummary letterSummary = new LetterSummary();
         letterSummary.letter = letter;
