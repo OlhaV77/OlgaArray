@@ -42,24 +42,24 @@ public class OlgaArray {
     }
 
     public void remove(int index) {
-       for(int i = 0; i < collection.length; i++) {
-           if (index == i) {
 
-          LetterSummary[] letterSummary = new LetterSummary[collection.length - 1 ];
-           for(int j = 0; j < letterSummary.length; j++){
-               letterSummary[j] = collection[j];
-           }
-           for(int j = i; j < collection.length -1; j++){
-               letterSummary[j] = collection[j];
-           }
-               collection = letterSummary;
+        LetterSummary[] letterSummary = new LetterSummary[collection.length - 1];
+        for (int i = 0; i < collection.length; i++) {
+            if (i == index) {
 
+                for (int j = 0; j < letterSummary.length; j++) {
+                    letterSummary[j] = collection[j];
+                }
 
-           }
+                for (int j = i; j < collection.length - 1; j++) {
+                    letterSummary[i] = collection[i + 1];
+                }
 
-           }
-
+                collection = letterSummary;
+            }
+        }
     }
+
 
     public LetterSummary findByLetter(String letter) {
         int index = 0;
