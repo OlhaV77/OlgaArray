@@ -42,35 +42,26 @@ public class OlgaArray {
     }
 
     public void remove(int index) {
+        LetterSummary[] letterSummary = new LetterSummary[collection.length - 1];     // new  array of object
 
-        for (int i = 0; i < collection.length; i++) {                                         //check array
-            if (i == index) {                                                                 //if remove index equal array index
-                LetterSummary[] letterSummary = new LetterSummary[collection.length - 1];     // new  array of object
-                for (int j = 0; j < letterSummary.length; j++) {                              //check new array
-                    letterSummary[j] = collection[j];                                         // copy old  array to new array
-                }
-
-                for (int j = i; j < collection.length - 1; j++) {                            //check if collection index equal (collection length - 1) index
-
-                    letterSummary[j] = collection[j + 1];                                    //object new array with index   equal old array with index + 1
-                }
-
-                collection = letterSummary;                                                 // return collection
-            }
+        for (int i = 0; i < index; i++) {                                            //copy array before remove index
+            letterSummary[i] = collection[i];
         }
+
+        for (int i = index + 1; i < collection.length; i++) {                        //copy array after remove index(jump remove index)
+            letterSummary[i - 1] = collection[i];                                   //copy array (i - 1 -- because letterSummary length -1)
+        }
+
+        collection = letterSummary;
     }
 
-
     public LetterSummary findByLetter(String letter) {
-        int index = 0;
-
         for (int i = 0; i < collection.length; i++) {                // check object array
-            index = i;                                               //  compare index with i (i = what is the count object)
             if (letter.equals(collection[i].letter)) {              // if a letter equals  a object
                 return collection[i];                                // return object
             }
         }
-        return null;
 
+        return null;
     }
 }

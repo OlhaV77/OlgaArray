@@ -106,8 +106,6 @@ public class OlgaArrayTest {
         assertThat(actual).isNull();
     }
 
-
-
     @Test
     public void findByLetter_when3RecordExistsAndMultipleCalls_returnsTheRecord() {
         OlgaArray subject = new OlgaArray();

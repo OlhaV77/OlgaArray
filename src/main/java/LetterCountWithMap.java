@@ -1,7 +1,10 @@
 
 public class LetterCountWithMap {
     static LetterSummary[] countLetters(String letter) {
+        // TODO: replace with OlgaArray
         LetterSummary[] result = new LetterSummary[letter.length()];          //object array
+
+
         if (letter.length() == 0) {                                         // then string empty return result
             return result;
         }
