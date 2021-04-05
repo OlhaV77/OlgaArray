@@ -43,19 +43,19 @@ public class OlgaArray {
 
     public void remove(int index) {
 
-        LetterSummary[] letterSummary = new LetterSummary[collection.length - 1];
-        for (int i = 0; i < collection.length; i++) {
-            if (i == index) {
-
-                for (int j = 0; j < letterSummary.length; j++) {
-                    letterSummary[j] = collection[j];
+        for (int i = 0; i < collection.length; i++) {                                         //check array
+            if (i == index) {                                                                 //if remove index equal array index
+                LetterSummary[] letterSummary = new LetterSummary[collection.length - 1];     // new  array of object
+                for (int j = 0; j < letterSummary.length; j++) {                              //check new array
+                    letterSummary[j] = collection[j];                                         // copy old  array to new array
                 }
 
-                for (int j = i; j < collection.length - 1; j++) {
-                    letterSummary[i] = collection[i + 1];
+                for (int j = i; j < collection.length - 1; j++) {                            //check if collection index equal (collection length - 1) index
+
+                    letterSummary[j] = collection[j + 1];                                    //object new array with index   equal old array with index + 1
                 }
 
-                collection = letterSummary;
+                collection = letterSummary;                                                 // return collection
             }
         }
     }
