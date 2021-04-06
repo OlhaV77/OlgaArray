@@ -1,7 +1,5 @@
 import org.junit.Test;
-
-import static org.assertj.core.api.Assertions.assertThat;
-
+import  static org.assertj.core.api.Assertions.assertThat;
 
 public class LetterCountWithMapTest {
 
@@ -94,6 +92,8 @@ public class LetterCountWithMapTest {
         assertThat(actualThirdLetterSummary.count).isEqualTo(1);
         assertThat(actualThirdLetterSummary.letter).isEqualTo("c");
     }
+
+
 
 
 }

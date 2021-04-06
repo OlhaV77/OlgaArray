@@ -1,9 +1,5 @@
 public class OlgaArray {
-    private LetterSummary[] collection;
-
-    OlgaArray() {
-        this.collection = new LetterSummary[0];
-    }
+    private LetterSummary[] collection = new LetterSummary[0];
 
     public void add(LetterSummary letterSummary) {
         // check if shelf has empty space
